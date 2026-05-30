@@ -1,0 +1,105 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "cr": "http://mlcommons.org/croissant/",
+    "rai": "http://mlcommons.org/croissant/RAI/",
+    "dct": "http://purl.org/dc/terms/",
+    "sc": "https://schema.org/"
+  },
+  "@type": "sc:Dataset",
+  "name": "Eurostat Pesticide Sales and Risk Data (aei_pestsal_rsk)",
+  "description": "Quantities of active substances in plant protection products placed on the EU market, broken down by substance group (Groups 1-4, CHAS, NCHAS), country, and year. Used to compute Harmonised Risk Indicator 1 (HRI 1).",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "url": "https://ec.europa.eu/eurostat/databrowser/view/aei_pestsal_rsk/default/table?lang=en",
+  "datePublished": "2025-06-03",
+  "creator": {
+    "@type": "Organization",
+    "name": "Eurostat",
+    "url": "https://ec.europa.eu/eurostat"
+  },
+  "distribution": [
+    {
+      "@type": "cr:FileObject",
+      "@id": "estat_aei_pestsal_rsk_en.csv",
+      "name": "estat_aei_pestsal_rsk_en.csv",
+      "contentUrl": "data/estat_aei_pestsal_rsk_en.csv",
+      "encodingFormat": "text/csv",
+      "sha256": "b0260eca96cf8206dfd749c611bac3b3210984dde76963f979b963f0322f1a0e"
+    }
+  ],
+  "recordSet": [
+    {
+      "@type": "cr:RecordSet",
+      "name": "observations",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "name": "DATAFLOW",
+          "description": "Eurostat dataflow identifier",
+          "dataType": "sc:Text"
+        },
+        {
+          "@type": "cr:Field",
+          "name": "LAST UPDATE",
+          "description": "Date of last data update",
+          "dataType": "sc:DateTime"
+        },
+        {
+          "@type": "cr:Field",
+          "name": "freq",
+          "description": "Frequency of observation (A = annual)",
+          "dataType": "sc:Text"
+        },
+        {
+          "@type": "cr:Field",
+          "name": "subst_cat",
+          "description": "Substance group category: CHAS (chemical active substances total), GRP1 (low-risk), GRP2 (standard), GRP3 (candidates for substitution), GRP4 (banned/not approved), NCHAS (non-chemical active substances)",
+          "dataType": "sc:Text"
+        },
+        {
+          "@type": "cr:Field",
+          "name": "unit",
+          "description": "Unit of measurement for OBS_VALUE",
+          "dataType": "sc:Text",
+          "references": {
+            "@id": "https://si-digital-framework.org/SI/units/kilogram"
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "name": "geo",
+          "description": "Reporting country (ISO 2-letter code or Eurostat aggregate)",
+          "dataType": "sc:Text"
+        },
+        {
+          "@type": "cr:Field",
+          "name": "TIME_PERIOD",
+          "description": "Reference year of the observation",
+          "dataType": "sc:Integer",
+          "references": {
+            "@id": "http://www.w3.org/2006/time#Year"
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "name": "OBS_VALUE",
+          "description": "Quantity of active substance placed on the market, in kilograms",
+          "dataType": "sc:Float",
+          "unitReference": "http://qudt.org/vocab/unit/KiloGM"
+        },
+        {
+          "@type": "cr:Field",
+          "name": "OBS_FLAG",
+          "description": "Observation status flag (e.g. 'e' = estimated)",
+          "dataType": "sc:Text"
+        },
+        {
+          "@type": "cr:Field",
+          "name": "CONF_STATUS",
+          "description": "Confidentiality status (e.g. 'C' = confidential)",
+          "dataType": "sc:Text"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+RO-Crate validation status for WP3 repository package
+
+File checked: ro-crate-metadata.json
+Status: ready for validator execution
+
+Local structural checks completed:
+- ro-crate-metadata.json is valid JSON.
+- The RO-Crate root entity is present.
+- Referenced repository files have been checked against the corrected package.
+- File names were corrected from .txt wrappers to their required extensions.
+
+Before final submission, run ro-crate-validator on the repository root and replace this note with the full validator output if your course requires the exact command output.
