@@ -1,0 +1,48 @@
+{
+  "@context": {
+    "fair4ml": "https://w3id.org/fair4ml#",
+    "schema": "https://schema.org/",
+    "dct": "http://purl.org/dc/terms/"
+  },
+  "@type": "fair4ml:MLModel",
+  "@id": "https://doi.org/<TUWRD-MODEL-DOI>",
+  "schema:name": "Pesticide Risk Trend XGBoost Classifier",
+  "schema:description": "XGBoost gradient-boosted trees classifier predicting Decreasing/Stable/Increasing pesticide risk trends for EU member states based on Eurostat HRI 1 data.",
+  "schema:version": "1.0.0",
+  "schema:dateCreated": "2026-05-28",
+  "schema:license": "https://creativecommons.org/licenses/by/4.0/",
+  "fair4ml:trainedOn": {
+    "@type": "schema:Dataset",
+    "schema:name": "Eurostat aei_pestsal_rsk",
+    "schema:url": "https://ec.europa.eu/eurostat/databrowser/view/aei_pestsal_rsk/default/table?lang=en",
+    "dct:identifier": "https://doi.org/<TUWRD-GENERATED-DATA-DOI>"
+  },
+  "fair4ml:algorithm": {
+    "@type": "fair4ml:Algorithm",
+    "schema:name": "XGBoost (Gradient Boosted Trees)",
+    "schema:softwareVersion": "2.0.3",
+    "schema:url": "https://xgboost.readthedocs.io/"
+  },
+  "fair4ml:hyperparameters": [
+    {"fair4ml:name": "n_estimators", "fair4ml:value": "200"},
+    {"fair4ml:name": "max_depth", "fair4ml:value": "6"},
+    {"fair4ml:name": "learning_rate", "fair4ml:value": "0.1"},
+    {"fair4ml:name": "subsample", "fair4ml:value": "0.8"},
+    {"fair4ml:name": "colsample_bytree", "fair4ml:value": "0.8"},
+    {"fair4ml:name": "objective", "fair4ml:value": "multi:softmax"},
+    {"fair4ml:name": "num_class", "fair4ml:value": "3"},
+    {"fair4ml:name": "random_state", "fair4ml:value": "42"}
+  ],
+  "fair4ml:evaluationMetrics": [
+    {"fair4ml:metricName": "accuracy", "fair4ml:metricValue": "0.78"},
+    {"fair4ml:metricName": "macro_precision", "fair4ml:metricValue": "0.77"},
+    {"fair4ml:metricName": "macro_recall", "fair4ml:metricValue": "0.78"},
+    {"fair4ml:metricName": "macro_f1", "fair4ml:metricValue": "0.77"}
+  ],
+  "fair4ml:intendedUse": "Educational demonstration of a reproducible ML pipeline for data stewardship practice. Not for policy or regulatory use.",
+  "fair4ml:knownLimitations": "Small dataset (~700 records), arbitrary class thresholds, many confidential values dropped, cold-start for lag features, no causal interpretation possible.",
+  "fair4ml:modelCard": "docs/model-card.md",
+  "fair4ml:modelSerialization": "joblib",
+  "fair4ml:taskType": "classification",
+  "fair4ml:outputClasses": ["Decreasing", "Stable", "Increasing"]
+}
