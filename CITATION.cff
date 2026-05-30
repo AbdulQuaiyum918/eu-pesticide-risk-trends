@@ -1,18 +1,12 @@
 cff-version: 1.2.0
-title: Eurostat Pesticide Risk Trend Analysis
+title: Traffic Accident Severity Austria
 message: Please cite this project using the metadata below.
 type: software
 authors:
   - family-names: Sohel
     given-names: Rana Md
-  - family-names: Group
-    given-names: 19
 version: 1.0.0
-date-released: 2026-05-29
+doi: 10.5281/zenodo.20467709
+repository-code: https://github.com/AbdulQuaiyum918/traffic-accident-severity-austria
+url: https://doi.org/10.5281/zenodo.20467709
 license: MIT
-keywords:
-  - FAIR Data Science
-  - Eurostat
-  - Pesticide analysis
-  - Data stewardship
-repository-code: https://github.com/your-group-repository
