@@ -1,0 +1,368 @@
+{
+  "dmp": {
+    "title": "DMP-FINAL: Eurostat Pesticide Risk Trend Analysis",
+    "description": "Final data management plan for the FAIR Data Science Group 19 project at TU Wien. This project analyses Eurostat pesticide risk trends using reproducible workflows, structured metadata standards, FAIR publication practices, and long-term repository preservation strategies.",
+    "language": "eng",
+    "created": "2026-05-30",
+    "modified": "2026-05-31",
+    "dmp_id": {
+      "identifier": "https://doi.org/10.70124/5rmcx-fah87",
+      "type": "doi"
+    },
+    "contact": {
+      "name": "Rana Md Sohel",
+      "mbox": "e12451240@student.tuwien.ac.at",
+      "contact_id": {
+        "identifier": "https://orcid.org/0009-0000-5614-7528",
+        "type": "orcid"
+      }
+    },
+    "contributor": [
+      {
+        "name": "Binoy MD Uthba Bin Anowar",
+        "role": ["DataCurator", "Software"],
+        "contributor_id": {
+          "identifier": "https://orcid.org/0000-0003-1009-7531",
+          "type": "orcid"
+        }
+      },
+      {
+        "name": "Shanto Md Aminul Islam",
+        "role": ["DataCurator", "Software"],
+        "contributor_id": {
+          "identifier": "https://orcid.org/0009-0000-2771-5469",
+          "type": "orcid"
+        }
+      },
+      {
+        "name": "Md Abdul Quaiyum",
+        "role": ["DataCurator", "Software"],
+        "contributor_id": {
+          "identifier": "https://orcid.org/0009-0006-1230-2200",
+          "type": "orcid"
+        }
+      },
+      {
+        "name": "Rana Md Sohel",
+        "role": ["DataCurator", "Software", "ProjectLeader"],
+        "contributor_id": {
+          "identifier": "https://orcid.org/0009-0000-5614-7528",
+          "type": "orcid"
+        }
+      }
+    ],
+    "project": [
+      {
+        "title": "Eurostat Pesticide Risk Trend Analysis",
+        "description": "FAIR Data Science course project (DaSt 2026, Group 19, TU Wien). Reproducible open-science experiment on Eurostat pesticide data including database storage, semantic annotation, machine learning, and FAIR publication.",
+        "start": "2026-04-01",
+        "end": "2026-06-30"
+      }
+    ],
+    "ethical_issues_exist": "no",
+    "ethical_issues_description": "The dataset contains no personal data. All records are aggregated national-level statistics published by Eurostat under CC BY 4.0. No ethics approval is required.",
+    "dataset": [
+      {
+        "dataset_id": {
+          "identifier": "https://ec.europa.eu/eurostat/databrowser/view/aei_pestsal_rsk",
+          "type": "url"
+        },
+        "title": "Eurostat Pesticide Sales and Risk Trend Dataset (aei_pestsal_rsk)",
+        "description": "Annual observations of pesticide sales and risk trends across EU member states. Contains 10 fields: DATAFLOW, LAST UPDATE, freq, subst_cat, unit, geo, TIME_PERIOD, OBS_VALUE, OBS_FLAG, CONF_STATUS. Approx. 2136 rows, CSV format.",
+        "type": "dataset",
+        "language": "eng",
+        "issued": "2025-06-03",
+        "keyword": ["pesticides", "Eurostat", "risk trend", "agriculture", "HRI 1"],
+        "personal_data": "no",
+        "sensitive_data": "no",
+        "data_quality_assurance": [
+          "Missing values in OBS_FLAG and CONF_STATUS documented and handled during preprocessing.",
+          "Data types verified against Croissant schema (metadata/croissant-dataset.json).",
+          "SHA256 checksum recorded in Croissant distribution entry."
+        ],
+        "distribution": [
+          {
+            "title": "Eurostat CSV download",
+            "format": "text/csv",
+            "access_url": "https://ec.europa.eu/eurostat/databrowser/view/aei_pestsal_rsk/default/table?lang=en",
+            "data_access": "open",
+            "license": [
+              {
+                "license_ref": "https://creativecommons.org/licenses/by/4.0/",
+                "start_date": "2025-06-03"
+              }
+            ],
+            "host": {
+              "title": "Eurostat",
+              "url": "https://ec.europa.eu/eurostat",
+              "pid_system": ["url"],
+              "storage_type": "repository",
+              "availability": "99"
+            }
+          },
+          {
+            "title": "DBRepo structured database entry",
+            "description": "Input data stored in 3NF relational schema with semantic ontology annotations via DBRepo REST API.",
+            "access_url": "PLACEHOLDER_DBREPO_URL",
+            "data_access": "open",
+            "license": [
+              {
+                "license_ref": "https://creativecommons.org/licenses/by/4.0/",
+                "start_date": "2026-05-01"
+              }
+            ],
+            "host": {
+              "title": "DBRepo",
+              "url": "https://www.ifs.tuwien.ac.at/infrastructures/dbrepo/1.13/",
+              "pid_system": ["url"],
+              "storage_type": "repository"
+            }
+          }
+        ],
+        "metadata": [
+          {
+            "description": "Croissant JSON-LD (metadata/croissant-dataset.json): all 10 fields with data types and SI/QUDT unit annotations.",
+            "language": "eng",
+            "metadata_standard_id": {
+              "identifier": "http://mlcommons.org/croissant/",
+              "type": "url"
+            }
+          }
+        ],
+        "security_and_privacy": [
+          {
+            "title": "No personal data",
+            "description": "The dataset contains aggregate public statistical data only. No privacy measures required."
+          }
+        ],
+        "preservation_statement": "Preserved at Eurostat source under CC BY 4.0. Copy in DBRepo with semantic metadata. Raw CSV in GitHub repository and Zenodo snapshot (https://doi.org/10.5281/zenodo.20467709)."
+      },
+      {
+        "dataset_id": {
+          "identifier": "PLACEHOLDER_MODEL_DEPOSIT_DOI",
+          "type": "doi"
+        },
+        "title": "Trained Pesticide Risk Trend Classifier (XGBoost, v0.1.0)",
+        "description": "Serialised XGBoost classifier (joblib) trained on Eurostat HRI 1 data. Classifies pesticide risk trends as Decreasing, Stable, or Increasing. Accuracy 0.78, macro F1 0.77. Documented with FAIR4ML metadata and Model Card.",
+        "type": "model",
+        "language": "eng",
+        "issued": "2026-05-30",
+        "keyword": ["XGBoost", "machine learning", "pesticides", "FAIR4ML", "classification"],
+        "personal_data": "no",
+        "sensitive_data": "no",
+        "data_quality_assurance": [
+          "Trained with fixed random_state=42 for reproducibility.",
+          "Evaluated on stratified 15% test set: accuracy 0.78, macro F1 0.77.",
+          "FAIR4ML metadata file deposited alongside model artefact."
+        ],
+        "distribution": [
+          {
+            "title": "TUWRD model deposit",
+            "description": "best_model.joblib and FAIR4ML metadata in TU Wien Research Data Repository test instance, DaSt-2026-final community.",
+            "format": "application/octet-stream",
+            "access_url": "PLACEHOLDER_MODEL_DEPOSIT_DOI",
+            "data_access": "open",
+            "license": [
+              {
+                "license_ref": "https://creativecommons.org/licenses/by/4.0/",
+                "start_date": "2026-05-30"
+              }
+            ],
+            "host": {
+              "title": "TU Wien Research Data Repository (test instance)",
+              "url": "https://test.researchdata.tuwien.ac.at",
+              "pid_system": ["doi"],
+              "storage_type": "repository",
+              "availability": "99"
+            }
+          }
+        ],
+        "metadata": [
+          {
+            "description": "FAIR4ML (metadata/fair4ml-best-model.json): algorithm, hyperparameters, evaluation metrics, intended use, limitations.",
+            "language": "eng",
+            "metadata_standard_id": {
+              "identifier": "https://w3id.org/fair4ml/",
+              "type": "url"
+            }
+          },
+          {
+            "description": "Model Card (docs/model-card.md): human-readable documentation of intended use, evaluation, limitations, ethics.",
+            "language": "eng",
+            "metadata_standard_id": {
+              "identifier": "https://arxiv.org/abs/1810.03993",
+              "type": "url"
+            }
+          }
+        ],
+        "preservation_statement": "Preserved in TUWRD test instance with DOI. Reproducible from source using requirements.txt and src/pipeline.py. Also in Zenodo snapshot https://doi.org/10.5281/zenodo.20467709."
+      },
+      {
+        "dataset_id": {
+          "identifier": "PLACEHOLDER_GENERATED_DATA_DOI",
+          "type": "doi"
+        },
+        "title": "Generated Outputs: Predictions, Metrics, and Evaluation Figures",
+        "description": "Test-set predictions (predictions.csv), evaluation metrics (evaluation_metrics.csv), confusion matrices for RF/XGBoost/kNN, model comparison chart, and feature importance plot. Separate TUWRD deposit from model artefact.",
+        "type": "dataset",
+        "language": "eng",
+        "issued": "2026-05-30",
+        "keyword": ["predictions", "evaluation", "confusion matrix", "XGBoost", "pesticides"],
+        "personal_data": "no",
+        "sensitive_data": "no",
+        "distribution": [
+          {
+            "title": "TUWRD generated data deposit",
+            "access_url": "PLACEHOLDER_GENERATED_DATA_DOI",
+            "data_access": "open",
+            "license": [
+              {
+                "license_ref": "https://creativecommons.org/licenses/by/4.0/",
+                "start_date": "2026-05-30"
+              }
+            ],
+            "host": {
+              "title": "TU Wien Research Data Repository (test instance)",
+              "url": "https://test.researchdata.tuwien.ac.at",
+              "pid_system": ["doi"],
+              "storage_type": "repository"
+            }
+          }
+        ],
+        "preservation_statement": "All outputs in GitHub under output/ and in TUWRD. Fully reproducible by re-running src/pipeline.py."
+      },
+      {
+        "dataset_id": {
+          "identifier": "https://doi.org/10.5281/zenodo.20467709",
+          "type": "doi"
+        },
+        "title": "Software and Metadata Artefacts – GitHub Repository v0.1.0",
+        "description": "Source code, metadata files (RO-Crate, CodeMeta, FAIR4ML, Croissant, Model Card, CITATION.cff), requirements.txt, SQL schema, and documentation. Archived on Zenodo via GitHub integration.",
+        "type": "software",
+        "language": "eng",
+        "issued": "2026-05-30",
+        "keyword": ["Python", "FAIR", "RO-Crate", "CodeMeta", "open science", "reproducible research"],
+        "personal_data": "no",
+        "sensitive_data": "no",
+        "data_quality_assurance": [
+          "All dependencies pinned in requirements.txt.",
+          "RO-Crate validated; output in docs/validation/ro-crate-validation.txt.",
+          "GitHub release v0.1.0 archived on Zenodo (DOI: 10.5281/zenodo.20467709)."
+        ],
+        "distribution": [
+          {
+            "title": "GitHub release v0.1.0",
+            "format": "application/zip",
+            "access_url": "https://github.com/AbdulQuaiyum918/traffic-accident-severity-austria/releases/tag/v0.1.0",
+            "data_access": "open",
+            "license": [
+              {
+                "license_ref": "https://spdx.org/licenses/MIT.html",
+                "start_date": "2026-05-30"
+              }
+            ],
+            "host": {
+              "title": "GitHub",
+              "url": "https://github.com",
+              "pid_system": ["url"],
+              "storage_type": "repository"
+            }
+          },
+          {
+            "title": "Zenodo snapshot",
+            "description": "Immutable archive created automatically from GitHub release v0.1.0.",
+            "format": "application/zip",
+            "access_url": "https://doi.org/10.5281/zenodo.20467709",
+            "download_url": "https://doi.org/10.5281/zenodo.20467709",
+            "data_access": "open",
+            "license": [
+              {
+                "license_ref": "https://spdx.org/licenses/MIT.html",
+                "start_date": "2026-05-30"
+              }
+            ],
+            "host": {
+              "title": "Zenodo",
+              "url": "https://zenodo.org",
+              "pid_system": ["doi"],
+              "storage_type": "repository",
+              "certified_with": "CoreTrustSeal"
+            }
+          }
+        ],
+        "metadata": [
+          {
+            "description": "CodeMeta 2.0 (codemeta.json): authors with ORCIDs, pinned dependencies, programming language, runtime.",
+            "language": "eng",
+            "metadata_standard_id": {
+              "identifier": "https://doi.org/10.5063/schema/codemeta-2.0",
+              "type": "doi"
+            }
+          },
+          {
+            "description": "CITATION.cff: citation metadata with real Zenodo DOI 10.5281/zenodo.20467709 and all 4 authors.",
+            "language": "eng",
+            "metadata_standard_id": {
+              "identifier": "https://citation-file-format.github.io/",
+              "type": "url"
+            }
+          },
+          {
+            "description": "RO-Crate 1.1 (ro-crate-metadata.json): full experiment package graph linking all artefacts.",
+            "language": "eng",
+            "metadata_standard_id": {
+              "identifier": "https://w3id.org/ro/crate/1.1",
+              "type": "url"
+            }
+          }
+        ],
+        "preservation_statement": "Long-term preservation via Zenodo DOI 10.5281/zenodo.20467709. GitHub release v0.1.0 provides the version-tagged snapshot. DMP archived at https://doi.org/10.70124/5rmcx-fah87."
+      },
+      {
+        "dataset_id": {
+          "identifier": "https://doi.org/10.70124/5rmcx-fah87",
+          "type": "doi"
+        },
+        "title": "DMP-FINAL: Eurostat Pesticide Risk Trend Analysis",
+        "description": "Final Data Management Plan and maDMP JSON submitted to the DaSt-2026-final community in the TU Wien Research Data Repository test instance.",
+        "type": "other",
+        "language": "eng",
+        "issued": "2026-05-31",
+        "keyword": ["DMP", "maDMP", "FAIR Data Science", "RDA", "data management"],
+        "personal_data": "no",
+        "sensitive_data": "no",
+        "distribution": [
+          {
+            "title": "TUWRD DMP deposit",
+            "access_url": "https://doi.org/10.70124/5rmcx-fah87",
+            "download_url": "https://doi.org/10.70124/5rmcx-fah87",
+            "data_access": "open",
+            "license": [
+              {
+                "license_ref": "https://creativecommons.org/licenses/by/4.0/",
+                "start_date": "2026-05-31"
+              }
+            ],
+            "host": {
+              "title": "TU Wien Research Data Repository (test instance)",
+              "url": "https://test.researchdata.tuwien.ac.at",
+              "pid_system": ["doi"],
+              "storage_type": "repository"
+            }
+          }
+        ],
+        "preservation_statement": "DMP preserved in TUWRD DaSt-2026-final community with DOI 10.70124/5rmcx-fah87. Continues the initial DMP from Part 2."
+      }
+    ],
+    "related_policy": [
+      {
+        "title": "TU Wien Research Data Policy",
+        "url": "https://www.tuwien.at/forschung/forschungsdaten"
+      },
+      {
+        "title": "European Commission Open Science Policy",
+        "url": "https://ec.europa.eu/info/research-and-innovation/strategy/strategy-2020-2024/our-digital-future/open-science_en"
+      }
+    ]
+  }
+}
