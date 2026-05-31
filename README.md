@@ -1,4 +1,4 @@
-# Eurostat Pesticide Risk Trend Analysis
+ eu-pesticide-risk-trends
 
 [![DOI](https://zenodo.org/badge/1231317717.svg)](https://doi.org/10.5281/zenodo.20467709)
 
